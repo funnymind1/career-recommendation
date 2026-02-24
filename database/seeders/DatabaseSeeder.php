@@ -10,12 +10,13 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // Create Admin User (no factory)
+        // Create Admin User
         User::updateOrCreate(
             ['email' => 'admin@career.com'],
             [
                 'name' => 'Admin',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('Admin@12345'),
+                'role' => 'admin', // 🔥 VERY IMPORTANT
             ]
         );
 
